@@ -7,6 +7,7 @@ This is a default [Next.js](https://nextjs.org/) project bootstrapped with [`cre
 - Add Wallet Integration ❌
 - Add OpenSea Integration ❌
 - Add Unit tests ❌
+- Add Vercel Deployment
 
 ## Getting Started
 
@@ -20,7 +21,7 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `pages/index.jsx`. The page auto-updates as you edit the file.
 
 ## Learn More
 
