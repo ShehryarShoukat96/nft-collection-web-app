@@ -1,9 +1,9 @@
 This is a default [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), customized as the default boilerplate for new Web3 projects.
 
 ## TODO LIST
-- Sanitize Template ⌛
-- Add UI Library ❌
-- Add Design Implementation with Mockup Data ❌
+- Sanitize Template ✅
+- Add UI Library ⌛
+- Add Design Implementation with Mockup Data ⌛
 - Add Wallet Integration ❌
 - Add OpenSea Integration ❌
 - Add Unit tests ❌
