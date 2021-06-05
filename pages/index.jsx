@@ -8,7 +8,7 @@ import ETHBalance from '../components/ETHBalance';
 import useEagerConnect from '../hooks/useEagerConnect';
 import usePersonalSign from '../hooks/usePersonalSign';
 
-export default function Home() {
+const Home = () => {
   const { account, library } = useWeb3React();
 
   const triedToEagerConnect = useEagerConnect();
@@ -34,7 +34,7 @@ export default function Home() {
       <header>
         <nav>
           <Link href="/">
-            <a>Next Web3 Boilerplate</a>
+            Next Web3 Boilerplate
           </Link>
 
           <Account triedToEagerConnect={triedToEagerConnect} />
@@ -53,7 +53,7 @@ export default function Home() {
         {isConnected && (
           <section>
             <ETHBalance />
-            <button onClick={handleSign}>Personal Sign</button>
+            <button type="button" onClick={handleSign}>Personal Sign</button>
           </section>
         )}
       </main>
@@ -92,4 +92,6 @@ export default function Home() {
       </style>
     </div>
   );
-}
+};
+
+export default Home;
