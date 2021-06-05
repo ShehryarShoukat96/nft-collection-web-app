@@ -1,20 +1,12 @@
 This is a default [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), customized as the default boilerplate for new Web3 projects.
 
-## Update
-
-Just added a TypeScript version of this boilerplate and upgrade the dependencies for the regular JavaScript version as well.
-
-[with-typescript Branch](https://github.com/mirshko/next-web3-boilerplate/tree/with-typescript)
-
-## Features
-
-- Separate packages from ethers.js for improved tree-shaking, often only ethers Contracts
-- Hooks-first approach to fetching and caching data from Contracts and memoization for performance with SWR
-- web3-react for ease of connecting to Web3 providers with a solid API
-
-## Previous Art
-
-- [NoahZinsmeister/hypertext](https://github.com/NoahZinsmeister/hypertext)
+## TODO LIST
+- Sanitize Template ⌛
+- Add UI Library ❌
+- Add Design Implementation with Mockup Data ❌
+- Add Wallet Integration ❌
+- Add OpenSea Integration ❌
+- Add Unit tests ❌
 
 ## Getting Started
 
@@ -44,3 +36,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Template Provided By
+
+- [NoahZinsmeister/hypertext](https://github.com/NoahZinsmeister/hypertext)
