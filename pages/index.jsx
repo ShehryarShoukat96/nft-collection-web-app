@@ -1,13 +1,14 @@
-import { verifyMessage } from "@ethersproject/wallet";
-import { useWeb3React } from "@web3-react/core";
-import Head from "next/head";
-import Link from "next/link";
-import Account from "../components/Account";
-import ETHBalance from "../components/ETHBalance";
-import useEagerConnect from "../hooks/useEagerConnect";
-import usePersonalSign, { hexlify } from "../hooks/usePersonalSign";
+import React from 'react';
+import { verifyMessage } from '@ethersproject/wallet';
+import { useWeb3React } from '@web3-react/core';
+import Head from 'next/head';
+import Link from 'next/link';
+import Account from '../components/Account';
+import ETHBalance from '../components/ETHBalance';
+import useEagerConnect from '../hooks/useEagerConnect';
+import usePersonalSign from '../hooks/usePersonalSign';
 
-export default function Home() {
+const Home = () => {
   const { account, library } = useWeb3React();
 
   const triedToEagerConnect = useEagerConnect();
@@ -15,13 +16,13 @@ export default function Home() {
   const sign = usePersonalSign();
 
   const handleSign = async () => {
-    const msg = "Next Web3 Boilerplate Rules";
+    const msg = 'Next Web3 Boilerplate Rules';
     const sig = await sign(msg);
     console.log(sig);
-    console.log("isValid", verifyMessage(msg, sig) === account);
+    console.log('isValid', verifyMessage(msg, sig) === account);
   };
 
-  const isConnected = typeof account === "string" && !!library;
+  const isConnected = typeof account === 'string' && !!library;
 
   return (
     <div>
@@ -33,7 +34,7 @@ export default function Home() {
       <header>
         <nav>
           <Link href="/">
-            <a>Next Web3 Boilerplate</a>
+            Next Web3 Boilerplate
           </Link>
 
           <Account triedToEagerConnect={triedToEagerConnect} />
@@ -42,7 +43,8 @@ export default function Home() {
 
       <main>
         <h1>
-          Welcome to{" "}
+          Welcome to
+          {' '}
           <a href="https://github.com/mirshko/next-web3-boilerplate">
             Next Web3 Boilerplate
           </a>
@@ -51,12 +53,13 @@ export default function Home() {
         {isConnected && (
           <section>
             <ETHBalance />
-            <button onClick={handleSign}>Personal Sign</button>
+            <button type="button" onClick={handleSign}>Personal Sign</button>
           </section>
         )}
       </main>
 
-      <style jsx>{`
+      <style jsx>
+        {`
         nav {
           display: flex;
           justify-content: space-between;
@@ -65,9 +68,11 @@ export default function Home() {
         main {
           text-align: center;
         }
-      `}</style>
+      `}
+      </style>
 
-      <style jsx global>{`
+      <style jsx global>
+        {`
         body {
           margin: 0;
         }
@@ -83,7 +88,10 @@ export default function Home() {
         *::before {
           box-sizing: border-box;
         }
-      `}</style>
+      `}
+      </style>
     </div>
   );
-}
+};
+
+export default Home;

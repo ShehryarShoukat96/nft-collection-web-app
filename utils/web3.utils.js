@@ -1,17 +1,17 @@
-import { formatUnits } from "@ethersproject/units";
+import { formatUnits } from '@ethersproject/units';
 
 export function shortenHex(hex, length = 4) {
   return `${hex.substring(0, length + 2)}…${hex.substring(
-    hex.length - length
+    hex.length - length,
   )}`;
 }
 
 const ETHERSCAN_PREFIXES = {
-  1: "",
-  3: "ropsten.",
-  4: "rinkeby.",
-  5: "goerli.",
-  42: "kovan.",
+  1: '',
+  3: 'ropsten.',
+  4: 'rinkeby.',
+  5: 'goerli.',
+  42: 'kovan.',
 };
 
 /**
@@ -21,13 +21,16 @@ const ETHERSCAN_PREFIXES = {
  */
 export function formatEtherscanLink(type, data) {
   switch (type) {
-    case "Account": {
+    case 'Account': {
       const [chainId, address] = data;
       return `https://${ETHERSCAN_PREFIXES[chainId]}etherscan.io/address/${address}`;
     }
-    case "Transaction": {
+    case 'Transaction': {
       const [chainId, hash] = data;
       return `https://${ETHERSCAN_PREFIXES[chainId]}etherscan.io/tx/${hash}`;
+    }
+    default: {
+      return undefined;
     }
   }
 }
@@ -41,5 +44,8 @@ export function formatEtherscanLink(type, data) {
  *
  * @returns {string}
  */
-export const parseBalance = (balance, decimals = 18, decimalsToDisplay = 3) =>
-  Number(formatUnits(balance, decimals)).toFixed(decimalsToDisplay);
+export const parseBalance = (
+  balance,
+  decimals = 18,
+  decimalsToDisplay = 3,
+) => Number(formatUnits(balance, decimals)).toFixed(decimalsToDisplay);

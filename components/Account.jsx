@@ -1,10 +1,11 @@
-import MetaMaskOnboarding from "@metamask/onboarding";
-import { useWeb3React } from "@web3-react/core";
-import { UserRejectedRequestError } from "@web3-react/injected-connector";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { injected } from "../connectors";
-import useENSName from "../hooks/useENSName";
-import { formatEtherscanLink, shortenHex } from "../util";
+import React, { useEffect, useRef, useState } from 'react';
+import MetaMaskOnboarding from '@metamask/onboarding';
+import { useWeb3React } from '@web3-react/core';
+import { UserRejectedRequestError } from '@web3-react/injected-connector';
+
+import { injected } from '../connectors';
+import useENSName from '../hooks/useENSName';
+import { formatEtherscanLink, shortenHex } from '../utils/web3.utils';
 
 const Account = ({ triedToEagerConnect }) => {
   const {
@@ -19,7 +20,7 @@ const Account = ({ triedToEagerConnect }) => {
   // initialize metamask onboarding
   const onboarding = useRef();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     onboarding.current = new MetaMaskOnboarding();
   }, []);
 
@@ -42,11 +43,10 @@ const Account = ({ triedToEagerConnect }) => {
     return null;
   }
 
-  if (typeof account !== "string") {
-    const hasMetaMaskOrWeb3Available =
-      MetaMaskOnboarding.isMetaMaskInstalled() ||
-      window?.ethereum ||
-      window?.web3;
+  if (typeof account !== 'string') {
+    const hasMetaMaskOrWeb3Available = MetaMaskOnboarding.isMetaMaskInstalled()
+      || window?.ethereum
+      || window?.web3;
 
     return (
       <div>
@@ -66,8 +66,8 @@ const Account = ({ triedToEagerConnect }) => {
             }}
           >
             {MetaMaskOnboarding.isMetaMaskInstalled()
-              ? "Connect to MetaMask"
-              : "Connect to Wallet"}
+              ? 'Connect to MetaMask'
+              : 'Connect to Wallet'}
           </button>
         ) : (
           <button onClick={() => onboarding.current?.startOnboarding()}>
@@ -81,9 +81,9 @@ const Account = ({ triedToEagerConnect }) => {
   return (
     <a
       {...{
-        href: formatEtherscanLink("Account", [chainId, account]),
-        target: "_blank",
-        rel: "noopener noreferrer",
+        href: formatEtherscanLink('Account', [chainId, account]),
+        target: '_blank',
+        rel: 'noopener noreferrer',
       }}
     >
       {ENSName || `${shortenHex(account, 4)}`}
