@@ -19,7 +19,7 @@ const Home = ({ classes }) => {
   const isConnected = typeof account === 'string' && !!library;
 
   return (
-    <div className={classes.mainContainer}>
+    <div className={classes.appContainer}>
       <Header triedToEagerConnect={triedToEagerConnect} isConnected={isConnected} />
 
       <main>
