@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core';
 import useEagerConnect from '../hooks/useEagerConnect';
 
 import { Header } from '../layouts';
-import HomeStyle from './index.style';
+import homeStyle from './index.style';
 
 import './index.module.css';
 
@@ -33,4 +33,4 @@ Home.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(HomeStyle, { withTheme: true })(Home);
+export default withStyles(homeStyle, { withTheme: true })(Home);
