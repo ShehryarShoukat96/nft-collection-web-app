@@ -2,9 +2,7 @@ import { createStyles } from '@material-ui/core';
 
 const HeaderWalletStyle = ({ spacing }) => createStyles({
   containerGrid: {
-    marginTop: spacing(1),
-    marginBottom: spacing(1),
-    padding: spacing(3),
+    padding: `${spacing(1)}px ${spacing(3)}px`,
   },
   button: {
     fontFamily: '"NeueBit", sans-serif',
