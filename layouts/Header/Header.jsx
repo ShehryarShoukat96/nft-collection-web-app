@@ -5,13 +5,15 @@ import { Grid, Typography, withStyles } from '@material-ui/core';
 import { HeaderWallet, HeaderSocialMedia } from './components';
 import headerStyle from './header.style';
 
-const Header = ({ triedToEagerConnect, isConnected, classes }) => (
+const Header = ({
+  triedToEagerConnect, isConnected, author, classes,
+}) => (
   <header>
     <Grid container>
       <Grid item xs={12}>
         <HeaderWallet triedToEagerConnect={triedToEagerConnect} isConnected={isConnected} />
         <Typography className={classes.title}>
-          Ellie Pritts
+          { author }
         </Typography>
         <HeaderSocialMedia />
       </Grid>
@@ -23,6 +25,11 @@ Header.propTypes = {
   triedToEagerConnect: PropTypes.bool.isRequired,
   isConnected: PropTypes.bool.isRequired,
   classes: PropTypes.object.isRequired,
+  author: PropTypes.string,
+};
+
+Header.defaultProps = {
+  author: 'Ellie Pritts',
 };
 
 export default withStyles(headerStyle, { withTheme: true })(Header);
