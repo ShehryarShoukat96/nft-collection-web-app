@@ -8,6 +8,7 @@ This is a default [Next.js](https://nextjs.org/) project bootstrapped with [`cre
 - Add OpenSea Integration ✅
 - Add Unit tests ❌
 - Add Vercel Deployment ✅
+- Add Drag and drop implementation ❌
 
 ## Demo
 
