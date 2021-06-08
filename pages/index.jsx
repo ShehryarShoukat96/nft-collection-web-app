@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core';
 
 import useEagerConnect from '../hooks/useEagerConnect';
 
-import { Header } from '../layouts';
+import { Header, Main } from '../layouts';
 import homeStyle from './index.style';
 
 import './index.module.css';
@@ -21,10 +21,7 @@ const Home = ({ classes }) => {
   return (
     <div className={classes.appContainer}>
       <Header triedToEagerConnect={triedToEagerConnect} isConnected={isConnected} />
-
-      <main>
-        <div>DABA</div>
-      </main>
+      <Main />
     </div>
   );
 };
