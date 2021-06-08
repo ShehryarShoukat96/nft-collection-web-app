@@ -6,9 +6,9 @@ import { withStyles } from '@material-ui/core';
 import useEagerConnect from '../hooks/useEagerConnect';
 
 import { Header, Main } from '../layouts';
-import homeStyle from './index.style';
+import homeStyle from '../page-styles/index.style';
 
-import './index.module.css';
+import '../page-styles/index.module.css';
 
 const Home = ({ classes }) => {
   const { account, library } = useWeb3React();
