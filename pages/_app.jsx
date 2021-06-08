@@ -26,6 +26,10 @@ const NextWeb3App = ({ Component, pageProps }) => {
       <Head>
         <title>NFT Collection</title>
         <link rel="icon" href="/NFT_Icon.png" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/morphing.css" />
+        <script src="/assets/js/modernizr.custom.js" />
+        <script src="/assets/js/classie.js" />
+        <script src="/assets/js/uiMorphingButton_fixed.js" />
       </Head>
       <MuiThemeProvider theme={MuiTheme}>
         <Component {...pageProps} />
