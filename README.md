@@ -4,7 +4,7 @@ This is a default [Next.js](https://nextjs.org/) project bootstrapped with [`cre
 - Sanitize Template ✅
 - Add UI Library ✅
 - Add Design Implementation with Mockup Data ✅
-- Add Wallet Integration ❌
+- Add Wallet Integration ✅
 - Add OpenSea Integration ❌
 - Add Unit tests ❌
 - Add Vercel Deployment ❌
