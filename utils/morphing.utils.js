@@ -42,7 +42,7 @@ const initMorphingButton = () => {
   document.querySelectorAll('.morph-button').forEach((bttn) => {
     // eslint-disable-next-line no-new
     new window.UIMorphingButton(bttn, {
-      closeEl: '.icon-close',
+      closeEl: '.nft-modal-close',
       onBeforeOpen() {
         // don't allow to scroll
         noScroll();
