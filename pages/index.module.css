@@ -1,0 +1,19 @@
+/* Define Font faces*/
+@font-face {
+    font-family: "NeueBit";
+    src: url('/assets/fonts/NeueBit-Bold.otf') format("otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "SF Pro";
+    src: url('/assets/fonts/SF-Pro-Display-Light.otf') format("otf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "SF Pro";
+    src: url('/assets/fonts/SF-Pro-Display-Medium.otf') format("otf");
+    font-weight: normal;
+}
+
