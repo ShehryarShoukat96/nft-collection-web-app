@@ -2,12 +2,12 @@ This is a default [Next.js](https://nextjs.org/) project bootstrapped with [`cre
 
 ## TODO LIST
 - Sanitize Template ✅
-- Add UI Library ⌛
-- Add Design Implementation with Mockup Data ⌛
-- Add Wallet Integration ❌
+- Add UI Library ✅
+- Add Design Implementation with Mockup Data ✅
+- Add Wallet Integration ✅
 - Add OpenSea Integration ❌
 - Add Unit tests ❌
-- Add Vercel Deployment
+- Add Vercel Deployment ❌
 
 ## Getting Started
 

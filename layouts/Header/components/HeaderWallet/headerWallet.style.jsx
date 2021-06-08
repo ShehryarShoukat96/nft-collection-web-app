@@ -9,6 +9,10 @@ const HeaderWalletStyle = ({ spacing }) => createStyles({
     color: '#fff',
     backgroundColor: 'rgba(70,70,70,0.7)',
   },
+  ensLink: {
+    textDecoration: 'none',
+    color: '#fff',
+  },
 });
 
 export default HeaderWalletStyle;
