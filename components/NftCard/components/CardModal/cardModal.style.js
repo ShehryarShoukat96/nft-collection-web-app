@@ -14,6 +14,7 @@ const cardModalStyle = ({ spacing }) => createStyles({
     height: spacing(5),
     flexDirection: 'row-reverse',
     textAlign: 'center',
+    maxWidth: '100%',
   },
   cardContent: {
     padding: `${spacing(2)}px ${spacing(3)}px`,

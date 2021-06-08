@@ -55,16 +55,32 @@ const CardModal = ({ classes, nft }) => {
             className={classes.cardHeader}
             action={(<CancelIcon className="nft-modal-close" style={{ color: colors.red[400] }} />)}
             title={(
-              <Typography className={classnames(classes.sfFont, classes.normalFont)} variant="subtitle1">{nft.name}</Typography>
+              <Typography noWrap className={classnames(classes.sfFont, classes.normalFont)} variant="subtitle1">
+                {nft.name.length > 30 ? `${nft.name.substring(0, 30)}...` : nft.name }
+              </Typography>
             )}
           />
           <CardActionArea>
-            <img
-              src={nft.image_original_url}
-              height="280"
-              width="100%"
-              alt={nft.name}
-            />
+            { nft.animation_url
+              ? (
+                <video
+                  height="280"
+                  width="100%"
+                  controls
+                >
+                  <source src={nft.animation_url} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              )
+              : (
+                <img
+                  src={nft.image_original_url || nft.image_preview_url || nft.image_thumbnail_url}
+                  height="280"
+                  width="100%"
+                  alt={nft.name}
+                />
+              )}
+
             <CardContent className={classes.cardContent}>
               <Box>
                 <Typography
