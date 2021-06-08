@@ -60,8 +60,8 @@ const HeaderSocialMedia = ({ classes }) => (
         justifyContent="center"
       >
         { mediaIcons.map(({ link, src, alt }) => (
-          <Box>
-            <MediaIcon src={src} alt={alt} link={link} key={`social-media-${link}`} />
+          <Box key={`social-media-${link}`}>
+            <MediaIcon src={src} alt={alt} link={link} />
           </Box>
         ))}
       </Box>
