@@ -63,6 +63,7 @@ const CardModal = ({ classes, nft }) => {
           <CardActionArea>
             { nft.animation_url
               ? (
+                // eslint-disable-next-line jsx-a11y/media-has-caption
                 <video
                   height="280"
                   width="100%"

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useWeb3React } from '@web3-react/core';
-import Link from 'next/link';
 import { withStyles } from '@material-ui/core';
 
 import useEagerConnect from '../hooks/useEagerConnect';

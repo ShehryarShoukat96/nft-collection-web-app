@@ -1,13 +1,9 @@
 import React from 'react';
-import {
-  withStyles,
-} from '@material-ui/core';
 
 import PropTypes from 'prop-types';
 import { CardModal } from './components';
-import nftCardStyle from './nftCard.style';
 
-const NftCard = ({ classes, nft }) => {
+const NftCard = ({ nft }) => {
   React.useEffect(() => {
   }, []);
 
@@ -27,8 +23,7 @@ const NftCard = ({ classes, nft }) => {
 };
 
 NftCard.propTypes = {
-  classes: PropTypes.object.isRequired,
   nft: PropTypes.object.isRequired,
 };
 
-export default withStyles(nftCardStyle, { withTheme: true })(NftCard);
+export default NftCard;

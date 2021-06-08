@@ -12,6 +12,7 @@ import headerWalletStyle from './headerWallet.style';
 import { injected } from '../../../../connectors';
 import useENSName from '../../../../hooks/useENSName';
 import { formatEtherscanLink, shortenHex } from '../../../../utils/web3.utils';
+import useOpenSeaAsset from '../../../../hooks/useOpenSeaAsset';
 
 const HeaderWallet = ({ triedToEagerConnect, isConnected, classes }) => {
   const {
@@ -23,6 +24,7 @@ const HeaderWallet = ({ triedToEagerConnect, isConnected, classes }) => {
     setError,
   } = useWeb3React();
 
+  const { data: nftData } = useOpenSeaAsset(account);
   // initialize metamask onboarding
   const onboarding = useRef();
 
@@ -31,7 +33,7 @@ const HeaderWallet = ({ triedToEagerConnect, isConnected, classes }) => {
   }, []);
 
   // manage connecting state for injected connector
-  const [connecting, setConnecting] = useState(false);
+  const [, setConnecting] = useState(false);
 
   useEffect(() => {
     if (active || error) {
@@ -43,12 +45,12 @@ const HeaderWallet = ({ triedToEagerConnect, isConnected, classes }) => {
   const connectToMetaMask = () => {
     setConnecting(true);
 
-    activate(injected, undefined, true).catch((error) => {
+    activate(injected, undefined, true).catch((activationError) => {
       // ignore the error if it's a user rejected request
-      if (error instanceof UserRejectedRequestError) {
+      if (activationError instanceof UserRejectedRequestError) {
         setConnecting(false);
       } else {
-        setError(error);
+        setError(activationError);
       }
     });
   };
@@ -112,7 +114,9 @@ const HeaderWallet = ({ triedToEagerConnect, isConnected, classes }) => {
         <Button className={classes.button}>
           Balance:
           {' '}
-          { !isConnected ? 2 : <CircularProgress color="#fff" size={16} /> }
+          { isConnected && nftData && nftData.assets
+            ? nftData.assets.length
+            : <CircularProgress color="#fff" size={16} /> }
         </Button>
       </Grid>
     </Grid>
