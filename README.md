@@ -7,8 +7,12 @@ This is a default [Next.js](https://nextjs.org/) project bootstrapped with [`cre
 - Add Wallet Integration ✅
 - Add OpenSea Integration ✅
 - Add Unit tests ❌
-- Add Vercel Deployment ❌
+- Add Vercel Deployment ✅
+- Add Drag and drop implementation ❌
 
+## Demo
+
+[Check Demo](https://nft-collection-web-app.vercel.app/)
 ## Getting Started
 
 First, run the development server:
