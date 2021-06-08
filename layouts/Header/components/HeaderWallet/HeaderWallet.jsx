@@ -45,12 +45,12 @@ const HeaderWallet = ({ triedToEagerConnect, isConnected, classes }) => {
   const connectToMetaMask = () => {
     setConnecting(true);
 
-    activate(injected, undefined, true).catch((error) => {
+    activate(injected, undefined, true).catch((activationError) => {
       // ignore the error if it's a user rejected request
-      if (error instanceof UserRejectedRequestError) {
+      if (activationError instanceof UserRejectedRequestError) {
         setConnecting(false);
       } else {
-        setError(error);
+        setError(activationError);
       }
     });
   };
